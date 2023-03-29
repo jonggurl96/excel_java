@@ -26,8 +26,8 @@ public class PsqlJdbc {
                     "drw_no_date, drwt_no1, drwt_no2, " +
                     "drwt_no3, drwt_no4, drwt_no5, drwt_no6, " +
                     "first_winamnt) " + d.values();
-//            stmt.executeUpdate(query);
-            System.out.println(query);
+//            System.out.println(query);
+            stmt.executeUpdate(query);
         }
     }
 }

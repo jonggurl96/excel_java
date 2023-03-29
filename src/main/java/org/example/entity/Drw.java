@@ -34,7 +34,7 @@ public class Drw {
         StringBuilder builder = new StringBuilder("values(");
         builder.append(drwNo + ", ");
         builder.append(bnusNo + ", ");
-        builder.append(drwNoDate + ", ");
+        builder.append("'" + drwNoDate + "', ");
         builder.append(drwtNo1 + ", ");
         builder.append(drwtNo2 + ", ");
         builder.append(drwtNo3 + ", ");

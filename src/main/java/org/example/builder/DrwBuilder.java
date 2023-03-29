@@ -9,17 +9,17 @@ import java.util.Map;
 public class DrwBuilder {
     public static Drw toDrw(Map<String, String> map) {
         return Drw.builder()
-                .drwNo(Integer.parseInt(map.get("drwNo")))
-                .drwtNo1(Integer.parseInt(map.get("drwtNo1")))
-                .drwtNo2(Integer.parseInt(map.get("drwtNo2")))
-                .drwtNo3(Integer.parseInt(map.get("drwtNo3")))
-                .drwtNo4(Integer.parseInt(map.get("drwtNo4")))
-                .drwtNo5(Integer.parseInt(map.get("drwtNo5")))
-                .drwtNo6(Integer.parseInt(map.get("drwtNo6")))
-                .bnusNo(Integer.parseInt(map.get("bnusNo")))
-                .firstWinAmnt(Long.parseLong(map.get("firstWinAmnt")))
+                .drwNo(Integer.parseInt(map.get("round")))
+                .drwtNo1(Integer.parseInt(map.get("num1")))
+                .drwtNo2(Integer.parseInt(map.get("num2")))
+                .drwtNo3(Integer.parseInt(map.get("num3")))
+                .drwtNo4(Integer.parseInt(map.get("num4")))
+                .drwtNo5(Integer.parseInt(map.get("num5")))
+                .drwtNo6(Integer.parseInt(map.get("num6")))
+                .bnusNo(Integer.parseInt(map.get("bnum")))
+                .firstWinAmnt(Long.parseLong(map.get("firstWinamnt")))
                 .drwNoDate(LocalDate.parse(
-                        map.get("drwNoDate"),
+                        map.get("date"),
                         DateTimeFormatter.ofPattern("yyyy-MM-dd")))
                 .build();
     }

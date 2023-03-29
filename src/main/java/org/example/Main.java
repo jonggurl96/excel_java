@@ -17,7 +17,7 @@ import java.util.Map;
 public class Main {
     public static void main(String[] args) throws Exception {
         List<Drw> entities = new ArrayList<>();
-        try(FileInputStream file = new FileInputStream("lotto_data_from_api.xlsx")) {
+        try(FileInputStream file = new FileInputStream("src/main/resources/lotto_data_from_api.xlsx")) {
             XSSFSheet sheet = new XSSFWorkbook(file).getSheet("data");
             
             int rows = sheet.getPhysicalNumberOfRows();
@@ -31,7 +31,16 @@ public class Main {
                         XSSFCell cell = row.getCell(j);
                         XSSFCell header = headers.getCell(j);
                         String headerNm = header.getStringCellValue();
-                        map.put(headerNm, cell.getRawValue());
+                        String value = "";
+                        switch(cell.getCellType()) {
+                            case NUMERIC:
+                                value = String.valueOf(cell.getRawValue());
+                                value = value.replace(".0", "");
+                                break;
+                            case STRING:
+                                value = cell.getStringCellValue();
+                        }
+                        map.put(headerNm, value);
                     }
                     entities.add(DrwBuilder.toDrw(map));
                 }
